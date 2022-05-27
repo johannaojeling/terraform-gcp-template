@@ -11,6 +11,10 @@ apis = [
   "sqladmin.googleapis.com"
 ]
 
+app_engine = {
+  location = "europe-west"
+}
+
 service_accounts = {
   cloud-functions = {
     display_name = "Cloud Functions Service Account"

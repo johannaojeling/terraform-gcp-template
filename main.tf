@@ -25,6 +25,12 @@ module "api" {
   service = each.key
 }
 
+module "app_engine" {
+  source = "./modules/app_engine"
+
+  location = var.app_engine.location
+}
+
 module "service_account" {
   source   = "./modules/service_account"
   for_each = var.service_accounts

@@ -15,6 +15,13 @@ variable "apis" {
   default     = []
 }
 
+variable "app_engine" {
+  type = object({
+    location = string
+  })
+  description = "App Engine configuration"
+}
+
 variable "service_accounts" {
   type = map(object({
     display_name = string

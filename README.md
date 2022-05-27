@@ -3,6 +3,7 @@
 Terraform code and basic configuration for some Google Cloud resources:
 
 - APIs
+- App Engine/Firestore
 - Service accounts
 
 ## Pre-requisites
