@@ -17,3 +17,10 @@ provider "google" {
   project = var.project
   region  = var.region
 }
+
+module "api" {
+  source   = "./modules/api"
+  for_each = toset(var.apis)
+
+  service = each.key
+}

@@ -8,3 +8,9 @@ variable "region" {
   description = "Default region"
   default     = "europe-west1"
 }
+
+variable "apis" {
+  type        = list(string)
+  description = "APIs to enable"
+  default     = []
+}

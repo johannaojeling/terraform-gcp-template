@@ -1,6 +1,8 @@
 # Terraform GCP template
 
-Terraform code and basic configuration for some Google Cloud resources
+Terraform code and basic configuration for some Google Cloud resources:
+
+- APIs
 
 ## Pre-requisites
 
