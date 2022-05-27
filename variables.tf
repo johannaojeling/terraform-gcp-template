@@ -14,3 +14,12 @@ variable "apis" {
   description = "APIs to enable"
   default     = []
 }
+
+variable "service_accounts" {
+  type = map(object({
+    display_name = string
+    roles        = optional(list(string))
+  }))
+  description = "Service accounts to create"
+  default     = {}
+}

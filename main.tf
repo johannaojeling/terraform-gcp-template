@@ -24,3 +24,13 @@ module "api" {
 
   service = each.key
 }
+
+module "service_account" {
+  source   = "./modules/service_account"
+  for_each = var.service_accounts
+
+  project      = var.project
+  account_id   = each.key
+  display_name = each.value.display_name
+  roles        = each.value.roles == null ? [] : each.value.roles
+}
