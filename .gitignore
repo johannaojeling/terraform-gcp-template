@@ -1,0 +1,11 @@
+# Terraform
+.terraform
+.terraform.lock.hcl
+*.tfstate*
+tfplan
+
+# IDE
+.idea
+
+# Direnv
+.envrc
