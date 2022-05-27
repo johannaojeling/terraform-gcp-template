@@ -50,3 +50,13 @@ module "service_account" {
   display_name = each.value.display_name
   roles        = each.value.roles == null ? [] : each.value.roles
 }
+
+module "storage" {
+  source   = "./modules/storage"
+  for_each = var.storage_buckets
+
+  name          = each.key
+  location      = each.value.location == null ? var.region : each.value.location
+  storage_class = each.value.storage_class
+  force_destroy = each.value.force_destroy
+}

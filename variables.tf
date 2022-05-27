@@ -48,3 +48,13 @@ variable "service_accounts" {
   description = "Service accounts to create"
   default     = {}
 }
+
+variable "storage_buckets" {
+  type = map(object({
+    location      = optional(string)
+    storage_class = optional(string)
+    force_destroy = optional(bool)
+  }))
+  description = "Storage buckets to create"
+  default     = {}
+}

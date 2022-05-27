@@ -53,3 +53,15 @@ service_accounts = {
     ]
   }
 }
+
+storage_buckets = {
+  jojeling-cloud-build = {
+    force_destroy = true
+  }
+  jojeling-data = {
+    force_destroy = true
+  }
+  jojeling-dataflow = {
+    force_destroy = true
+  }
+}
