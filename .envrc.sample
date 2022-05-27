@@ -1,0 +1,8 @@
+set -a
+
+export GOOGLE_APPLICATION_CREDENTIALS=""
+
+export TF_STATE_BUCKET=""
+export TF_CLI_ARGS_init="-backend-config=\"bucket=${TF_STATE_BUCKET}\""
+export TF_WORKSPACE=""
+export TF_VAR_project=""
