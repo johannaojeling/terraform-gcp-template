@@ -15,6 +15,21 @@ app_engine = {
   location = "europe-west"
 }
 
+bigquery_datasets = {
+  raw = {
+    tables = {
+      events = {
+        schema = "raw/events.json"
+        time_partitioning = {
+          type = "DAY"
+        }
+        deletion_protection = false
+      }
+    }
+    delete_contents_on_destroy = true
+  }
+}
+
 service_accounts = {
   cloud-functions = {
     display_name = "Cloud Functions Service Account"

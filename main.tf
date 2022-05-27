@@ -31,6 +31,16 @@ module "app_engine" {
   location = var.app_engine.location
 }
 
+module "bigquery" {
+  source   = "./modules/bigquery"
+  for_each = var.bigquery_datasets
+
+  dataset                    = each.key
+  location                   = each.value.location == null ? var.region : each.value.location
+  tables                     = each.value.tables == null ? {} : each.value.tables
+  delete_contents_on_destroy = false
+}
+
 module "service_account" {
   source   = "./modules/service_account"
   for_each = var.service_accounts

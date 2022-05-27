@@ -22,6 +22,24 @@ variable "app_engine" {
   description = "App Engine configuration"
 }
 
+variable "bigquery_datasets" {
+  type = map(object({
+    location = optional(string)
+    tables = optional(map(object({
+      schema = string
+      time_partitioning = optional(object({
+        expiration_ms = optional(number)
+        field         = optional(string)
+        type          = string
+      }))
+      deletion_protection = optional(bool)
+    })))
+    delete_contents_on_destroy = optional(bool)
+  }))
+  description = "BigQuery datasets to create"
+  default     = {}
+}
+
 variable "service_accounts" {
   type = map(object({
     display_name = string

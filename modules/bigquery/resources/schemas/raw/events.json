@@ -1,0 +1,22 @@
+[
+  {
+    "name": "timestamp",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_type",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "user_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
