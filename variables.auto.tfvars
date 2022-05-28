@@ -30,6 +30,18 @@ bigquery_datasets = {
   }
 }
 
+networks = {
+  vpc = {
+    subnets = {
+      subnet = {
+        region                   = "europe-west1"
+        ip_cidr_range            = "10.2.0.0/16"
+        private_ip_google_access = true
+      }
+    }
+  }
+}
+
 service_accounts = {
   cloud-functions = {
     display_name = "Cloud Functions Service Account"

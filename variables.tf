@@ -40,6 +40,18 @@ variable "bigquery_datasets" {
   default     = {}
 }
 
+variable "networks" {
+  type = map(object({
+    subnets = optional(map(object({
+      region                   = string
+      ip_cidr_range            = string
+      private_ip_google_access = optional(bool)
+    })))
+  }))
+  description = "VPC networks to create"
+  default     = {}
+}
+
 variable "service_accounts" {
   type = map(object({
     display_name = string

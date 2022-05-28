@@ -41,6 +41,14 @@ module "bigquery" {
   delete_contents_on_destroy = false
 }
 
+module "network" {
+  source   = "./modules/network"
+  for_each = var.networks
+
+  vpc     = each.key
+  subnets = each.value.subnets == null ? {} : each.value.subnets
+}
+
 module "service_account" {
   source   = "./modules/service_account"
   for_each = var.service_accounts

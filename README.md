@@ -7,10 +7,11 @@ Terraform code and basic configuration for some Google Cloud resources:
 - BigQuery
 - Service accounts
 - Storage
+- VPC network
 
 ## Pre-requisites
 
-- Terraform version >= 1.2.1
+- Terraform version 1.2.1+
 
 ## Deployment
 
