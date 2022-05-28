@@ -20,7 +20,7 @@ provider "google" {
 
 module "api" {
   source   = "./modules/api"
-  for_each = toset(var.apis)
+  for_each = var.apis
 
   service = each.key
 }

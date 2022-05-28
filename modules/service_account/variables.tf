@@ -14,6 +14,6 @@ variable "display_name" {
 }
 
 variable "roles" {
-  type        = list(string)
+  type        = set(string)
   description = "Roles to grant service account"
 }

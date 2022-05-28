@@ -10,7 +10,7 @@ variable "region" {
 }
 
 variable "apis" {
-  type        = list(string)
+  type        = set(string)
   description = "APIs to enable"
   default     = []
 }
@@ -43,7 +43,7 @@ variable "bigquery_datasets" {
 variable "service_accounts" {
   type = map(object({
     display_name = string
-    roles        = optional(list(string))
+    roles        = optional(set(string))
   }))
   description = "Service accounts to create"
   default     = {}

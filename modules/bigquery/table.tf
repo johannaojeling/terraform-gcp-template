@@ -5,7 +5,7 @@ resource "google_bigquery_table" "table" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
 
   dynamic "time_partitioning" {
-    for_each = each.value.time_partitioning == null ? {} : { _ : each.value.time_partitioning }
+    for_each = each.value.time_partitioning == null ? [] : [each.value.time_partitioning]
 
     content {
       expiration_ms = time_partitioning.value.expiration_ms
